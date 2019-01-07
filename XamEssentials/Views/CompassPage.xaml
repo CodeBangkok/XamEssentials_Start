@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamEssentials.Views.CompassPage"
+             Title="Compass">
+    <StackLayout>
+        <Label Text="Monitor compass for changes."
+               FontAttributes="Bold"
+               Margin="12" />
+        <Switch IsToggled="{Binding ApplyLowPassFilter}">
+            <Switch.IsVisible>
+                <OnPlatform x:TypeArguments="x:Boolean"
+                            Android="True"
+                            Default="False" />
+            </Switch.IsVisible>
+        </Switch>
+        <ScrollView>
+            <Grid Padding="12,0,12,12">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0"
+                       Grid.ColumnSpan="2"
+                       x:Name="compass1Label" />
+                <Picker Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        HorizontalOptions="FillAndExpand"
+                        x:Name="speed1Picker"
+                        Title="Speed"/>
+                <Button Grid.Row="2"
+                        Grid.Column="0"
+                        Text="Start"
+                        x:Name="start1Button"
+                        BackgroundColor="Silver"/>
+                <Button Grid.Row="2"
+                        Grid.Column="1"
+                        Text="Stop"
+                        x:Name="stop1Button"
+                        BackgroundColor="Silver"/>
+                <Label Grid.Row="3"
+                       Grid.ColumnSpan="2"
+                       Margin="0,20,0,0"
+                       x:Name="compass2Label"/>
+                <Picker Grid.Row="4"
+                        Grid.ColumnSpan="2"
+                        HorizontalOptions="FillAndExpand"
+                        x:Name="speed2Picker"
+                        Title="Speed"/>
+                <Button Grid.Row="5"
+                        Grid.Column="0"
+                        Text="Start"
+                        x:Name="start2Button"
+                        BackgroundColor="Silver"/>
+                <Button Grid.Row="5"
+                        Grid.Column="1"
+                        Text="Stop"
+                        x:Name="stop2Button"
+                        BackgroundColor="Silver"/>
+            </Grid>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>
