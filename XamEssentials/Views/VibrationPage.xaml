@@ -22,7 +22,8 @@
                 <Label Text="Vibration is not supported."
                        TextColor="Red"
                        FontAttributes="Italic"
-                       x:Name="notSupportLabel"/>
+                       x:Name="notSupportLabel"
+                       IsVisible="false"/>
             </StackLayout>
         </ScrollView>
     </StackLayout>

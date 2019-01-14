@@ -7,19 +7,9 @@
         <Label Text="Monitor compass for changes."
                FontAttributes="Bold"
                Margin="12" />
-        <Switch IsToggled="{Binding ApplyLowPassFilter}">
-            <Switch.IsVisible>
-                <OnPlatform x:TypeArguments="x:Boolean"
-                            Android="True"
-                            Default="False" />
-            </Switch.IsVisible>
-        </Switch>
         <ScrollView>
             <Grid Padding="12,0,12,12">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
@@ -30,40 +20,21 @@
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="0"
                        Grid.ColumnSpan="2"
-                       x:Name="compass1Label" />
+                       x:Name="compassLabel" />
                 <Picker Grid.Row="1"
                         Grid.ColumnSpan="2"
                         HorizontalOptions="FillAndExpand"
-                        x:Name="speed1Picker"
+                        x:Name="speedPicker"
                         Title="Speed"/>
                 <Button Grid.Row="2"
                         Grid.Column="0"
                         Text="Start"
-                        x:Name="start1Button"
+                        x:Name="startButton"
                         BackgroundColor="Silver"/>
                 <Button Grid.Row="2"
                         Grid.Column="1"
                         Text="Stop"
-                        x:Name="stop1Button"
-                        BackgroundColor="Silver"/>
-                <Label Grid.Row="3"
-                       Grid.ColumnSpan="2"
-                       Margin="0,20,0,0"
-                       x:Name="compass2Label"/>
-                <Picker Grid.Row="4"
-                        Grid.ColumnSpan="2"
-                        HorizontalOptions="FillAndExpand"
-                        x:Name="speed2Picker"
-                        Title="Speed"/>
-                <Button Grid.Row="5"
-                        Grid.Column="0"
-                        Text="Start"
-                        x:Name="start2Button"
-                        BackgroundColor="Silver"/>
-                <Button Grid.Row="5"
-                        Grid.Column="1"
-                        Text="Stop"
-                        x:Name="stop2Button"
+                        x:Name="stopButton"
                         BackgroundColor="Silver"/>
             </Grid>
         </ScrollView>
